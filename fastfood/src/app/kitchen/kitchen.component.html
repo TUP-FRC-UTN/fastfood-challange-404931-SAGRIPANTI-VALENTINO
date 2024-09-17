@@ -1,3 +1,10 @@
 <div>
-    
+    <h3>Pendiente de Cocinar:</h3>
+    <ul>
+        @for (p of listaPedidosPendientes; track $index) {
+            <li>{{"(" + p.number +")" + " - " + p.description}}
+                <button class="btn btn-primary mt-3" (click)="cocinar()">Cocinar</button>
+            </li>
+        }
+    </ul>
 </div>
