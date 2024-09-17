@@ -1,3 +1,21 @@
 <div class="container">
-    <h1>hola</h1>
+    <h3>Pedidos Ingresados:</h3>
+    <div>
+        @for (p of pedidosIngresados; track $index) {
+            <p> {{p.number + " - " + p.name + " - " + p.description + " - " + p.date.toDateString()}} </p>
+        }
+    </div>
+
+    <div>
+        <h5>Delivery</h5>
+        <app-delivery-point></app-delivery-point>
+    </div>
+    <div>
+        <h5>POS</h5>
+        <app-pos></app-pos>
+    </div>
+    <div>
+        <h5>Cocina</h5>
+        <app-kitchen></app-kitchen>
+    </div>
 </div>

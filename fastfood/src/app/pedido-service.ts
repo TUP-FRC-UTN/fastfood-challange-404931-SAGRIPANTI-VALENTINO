@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Pedido } from '../pedido';
+import { PEDIDOS } from './datos/datos';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +8,7 @@ import { Pedido } from '../pedido';
 export class PedidoService {
   private listaPedidosIngresados : Pedido[] = []
   private listaPedidosEnCoccion : Pedido[] = [] 
-  private listaPedidosEntregados : Pedido[] = []
+  private listaPedidosEntregados : Pedido[] = PEDIDOS
   
   getPedidosIngresados(){
     return this.listaPedidosIngresados
@@ -28,6 +29,7 @@ export class PedidoService {
     this.listaPedidosEntregados.push(p)
   }
   entregar(index : number){
-    this.listaPedidosEntregados.slice(index, 1)
+    this.listaPedidosEntregados.splice(index, 1)
+    console.log("se entrego")
   }
 }
