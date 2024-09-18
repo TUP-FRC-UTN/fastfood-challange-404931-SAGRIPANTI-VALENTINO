@@ -16,7 +16,7 @@ export class PosComponent {
   nuevoPedido : Pedido = new Pedido()
 
   enviarPedido(){
-    this,this.nuevoPedido.number = Math.floor(Math.random() * 1000) + 1 
+    this,this.nuevoPedido.number = Math.floor(Math.random() * 100) + 1 
     this.pedidoService.addPedidoAIngresar(this.nuevoPedido)
     this.nuevoPedido = new Pedido()
   }
