@@ -2,11 +2,12 @@ import { Component, inject } from '@angular/core';
 import { PedidoService } from '../pedido-service';
 import { Pedido } from '../../pedido';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-pos',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './pos.component.html',
   styleUrl: './pos.component.css'
 })

@@ -8,13 +8,15 @@
         }
     </ul>
 </div>
-<div>
-    <h6>Pedidos en Coccion</h6>
-    <ul>
-        @for (p of listaParaCocinar; track $index) {
-            <li> {{"(" + p.number +")" + " - " + p.description}} 
-                <button class="btn btn-danger mt-3" (click)="terminar($index)">Entregar!</button>
-            </li>
-        }
-    </ul>
-</div>
+@if (listaParaCocinar.length > 0) {
+    <div>
+        <h6>Pedidos en Coccion</h6>
+        <ul>
+            @for (p of listaParaCocinar; track $index) {
+                <li> {{"(" + p.number +")" + " - " + p.description}} 
+                    <button class="btn btn-danger mt-3" (click)="terminar($index)">Entregar!</button>
+                </li>
+            }
+        </ul>
+    </div>
+}
