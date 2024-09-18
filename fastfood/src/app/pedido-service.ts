@@ -6,9 +6,9 @@ import { PEDIDOS } from './datos/datos';
   providedIn: 'root'
 })
 export class PedidoService {
-  private listaPedidosIngresados : Pedido[] = []
+  private listaPedidosIngresados : Pedido[] = PEDIDOS
   private listaPedidosEnCoccion : Pedido[] = [] 
-  private listaPedidosEntregados : Pedido[] = PEDIDOS
+  private listaPedidosEntregados : Pedido[] = []
   
   getPedidosIngresados(){
     return this.listaPedidosIngresados

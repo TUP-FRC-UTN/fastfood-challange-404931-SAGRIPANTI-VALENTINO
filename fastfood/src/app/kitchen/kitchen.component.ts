@@ -15,6 +15,12 @@ export class KitchenComponent {
   listaParaCocinar : Pedido[] = this.pedidoService.getPedidosEnCoccion()
 
   cocinar(index : number){
-    this.pedidoService.addPedidoACocinar(this.listaPedidosPendientes(this.listaPedidosPendientes.at(index)))
+    const p : Pedido = this.listaPedidosPendientes[index]
+    this.pedidoService.addPedidoACocinar(p)
+    this.listaPedidosPendientes.splice(index, 1)
+  }
+  terminar(index : number){
+    this.pedidoService.addPedidoAEntregar(this.listaParaCocinar[index])
+    this.listaParaCocinar.splice(0, 100)
   }
 }
